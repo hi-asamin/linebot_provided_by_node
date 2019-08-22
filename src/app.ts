@@ -1,10 +1,13 @@
-import { assert } from "chai";
-import * as line from "@line/bot-sdk"
+import * as line from "@line/bot-sdk";
+import * as dotenv from "dotenv";
 import express from "express";
+import LineMessageEvent from "./model/line_message_event";
+
+dotenv.config();
 
 const config = {
-    channelAccessToken: TOKEN,
-    channelSecret: SECRET,
+    channelAccessToken: "",
+    channelSecret: process.env.CHANNEL_SECRET || "",
 }
 
 const app = express();
